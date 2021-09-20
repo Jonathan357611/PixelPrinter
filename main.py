@@ -2,7 +2,9 @@ import click
 from PIL import Image
 
 class PixelPrinter:
-    self.RESET = '\033[0m'
+    def __init__(self):
+        self.RESET = '\033[0m'
+
     def get_color_escape(self, r, g, b, background=False):
         return '\033[{};2;{};{};{}m'.format(48 if background else 38, r, g, b)
 
