@@ -26,7 +26,7 @@ def show(filename, downscale):
         print(error_msg("--downscale can't larger than height/width of image!"))
         exit(0)
     # Loading image again
-    im = im.resize((int(width / downscale), int(height / downscale)))
+    im = im.resize((int(width / downscale), int(height / downscale)), Image.LANCZOS)
     width, height = im.size
     pixel_values = list(im.getdata())
 
