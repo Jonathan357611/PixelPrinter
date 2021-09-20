@@ -5,6 +5,6 @@ import main as test
 @click.option("--image", "-i", "image", required=True, help="Path to image to display")
 @click.option("--downscale", "-d", "downscale", default="0", help="Downscale displayed image by n")
 def process(image, downscale):
-    test.get_image_color(image)
+    test.show(image, int(downscale))
 
 process()
