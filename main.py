@@ -11,9 +11,10 @@ def get_image_color(filename):
     pixel_values = list(im.getdata())
 
     for i, color in enumerate(pixel_values):
-        print(get_color_escape(color[0], color[1], color[2], True) + f"  {RESET}", end="")
         if i % width == 0:
             print("")
+        print(get_color_escape(color[0], color[1], color[2], True) + f"  {RESET}", end="")
+
     print("\n")
 
 get_image_color(input("file (test) > "))
