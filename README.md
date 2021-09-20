@@ -2,7 +2,7 @@
 
 ---
 
-Package to show pictures in the Command line.
+Package to show pictures in the Linux Command line.
 
 ---
 
