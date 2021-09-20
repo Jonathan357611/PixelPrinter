@@ -14,7 +14,7 @@ def show(filename, downscale):
     except:
         print(error_msg("--downscale is not int!"))
         exit(0)
-    if int(downscale) >= 0:
+    if int(downscale) <= 0:
         print(error_msg("--downscale can't be zero or smaller!"))
         exit(0)
 
