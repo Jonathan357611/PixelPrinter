@@ -10,6 +10,7 @@ def error_msg(msg):
 def process(image, downscale):
     if not downscale.isnumeric:
         print(error_msg("--downscale is not int!"))
-    test.show(image, int(downscale))
+    else:
+        test.show(image, int(downscale))
 
 process()
