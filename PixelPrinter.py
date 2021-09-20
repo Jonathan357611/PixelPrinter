@@ -47,7 +47,7 @@ class PixelPrinter:
 
 @click.command()
 @click.option("--image", "-i", "image", required=True, help="Path to image to display")
-@click.option("--downscale", "-d", "downscale", default="1", help="Downscale displayed image by n")
+@click.option("--downscale", "-d", "downscale", default=1, help="Downscale displayed image by n")
 def process(image, downscale):
     pp = PixelPrinter()
     pp.show(image, int(downscale))
