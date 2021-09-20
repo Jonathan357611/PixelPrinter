@@ -5,8 +5,10 @@ def get_color_escape(r, g, b, background=False):
     return '\033[{};2;{};{};{}m'.format(48 if background else 38, r, g, b)
 
 
-def get_image_color(filename):
+def show(filename, downscale):
     im = Image.open(filename, 'r')
+    width, height = im.size
+    im.resize((width/downscale), (height/downscale))
     width, height = im.size
     pixel_values = list(im.getdata())
 
@@ -18,4 +20,4 @@ def get_image_color(filename):
     print("\n")
 
 if __name__ == '__main__':
-    get_image_color(input("file (test) > "))
+    show(input("file (test) > "))
