@@ -13,7 +13,7 @@ class PixelPrinter:
     def error_msg(self, msg):
         return f'\033[38;2;255;0;0mERROR: {msg}'
 
-    def show(self, filename, downscale):
+    def show(self, filename, downscale=1):
         ### HANDLING ERRORS
         try:
             int(downscale)
