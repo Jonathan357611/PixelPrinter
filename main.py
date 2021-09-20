@@ -17,4 +17,5 @@ def get_image_color(filename):
 
     print("\n")
 
-get_image_color(input("file (test) > "))
+if __name__ == '__main__':
+    get_image_color(input("file (test) > "))
