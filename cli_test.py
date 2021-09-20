@@ -8,9 +8,11 @@ def error_msg(msg):
 @click.option("--image", "-i", "image", required=True, help="Path to image to display")
 @click.option("--downscale", "-d", "downscale", default="1", help="Downscale displayed image by n")
 def process(image, downscale):
-    if not downscale.isnumeric:
+    try:
+        int(downscale)
+    except:
         print(error_msg("--downscale is not int!"))
-    else:
-        test.show(image, int(downscale))
+        exit(0)
+    test.show(image, int(downscale))
 
 process()
