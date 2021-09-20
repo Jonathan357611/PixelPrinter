@@ -41,6 +41,9 @@ class PixelPrinter:
         for i, color in enumerate(pixel_values):
             if i % width == 0:
                 print("")
+            print(color[0])
+            print(color[1])
+            print(color[2])
             print(self.get_color_escape(color[0], color[1], color[2], True) + f"  {self.RESET}", end="")
         print("\n")
 
