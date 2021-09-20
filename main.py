@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import click
 from PIL import Image
 
