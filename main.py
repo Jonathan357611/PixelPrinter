@@ -49,5 +49,4 @@ class PixelPrinter:
 def process(image, downscale):
     PixelPrinter().show(image, int(downscale))
 
-if __name__ == '__main__':
-    process()
+process()
