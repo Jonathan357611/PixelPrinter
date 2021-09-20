@@ -33,11 +33,13 @@ class PixelPrinter:
             exit(0)
 
         im = im.resize((int(width / downscale), int(height / downscale)), Image.LANCZOS)
+        width, height = im.size
         pixel_values = list(im.getdata())
 
 
+
         for i, color in enumerate(pixel_values):
-            if i % (int(width) / int(downscale)) == 0:
+            if i % width == 0:
                 print("")
             print(self.get_color_escape(color[0], color[1], color[2], True) + f"  {self.RESET}", end="")
         print("\n")
