@@ -8,7 +8,7 @@ def get_color_escape(r, g, b, background=False):
 def show(filename, downscale):
     im = Image.open(filename, 'r')
     width, height = im.size
-    im.resize((width/downscale), (height/downscale))
+    im = im.resize(int((width * downscale)), int((height / downscale)))
     width, height = im.size
     pixel_values = list(im.getdata())
 
