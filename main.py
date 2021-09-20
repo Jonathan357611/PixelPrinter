@@ -17,4 +17,4 @@ def get_image_color(filename):
             print("\n", end="")
     print("\n")
 
-get_image_color(input("file > "))
+get_image_color(input("file (test) > "))
