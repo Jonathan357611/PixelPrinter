@@ -13,10 +13,10 @@ def get_image_color(filename):
     # print(len(pixel_values))
 
     for i, color in enumerate(pixel_values):
+        print(get_color_escape(color[0], color[1], color[2]) + get_color_escape(color[0], color[1], color[2], True) + "  ", end="")
         if i % 88 == 0:
-            print("\n")
-        else:
-            print(get_color_escape(color[0], color[1], color[2]) + get_color_escape(color[0], color[1], color[2], True) + "  ", end="")
+            print("\n", end="")
+
 
 
 get_image_color("image.png")
