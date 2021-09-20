@@ -1,8 +1,7 @@
 # PixelPrinter
 
----
 
-Package to show pictures in the Linux Command line.
+A package to show pictures in the Linux Command line.
 
 ---
 
