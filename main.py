@@ -12,7 +12,7 @@ def get_image_color(filename):
 
     print("\n", end="")
     for i, color in enumerate(pixel_values):
-        print(get_color_escape(color[0], color[1], color[2]) + get_color_escape(color[0], color[1], color[2], True) + f"  {RESET}", end="")
+        print(get_color_escape(color[0], color[1], color[2], True) + f"  {RESET}", end="")
         if i % width == 0:
             print("")
     print("\n")
