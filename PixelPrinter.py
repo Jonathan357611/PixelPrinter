@@ -41,6 +41,7 @@ class PixelPrinter:
         for i, color in enumerate(pixel_values):
             if i % width == 0:
                 print("")
+            print(color)
             print(color[0])
             print(color[1])
             print(color[2])
