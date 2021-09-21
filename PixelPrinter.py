@@ -45,11 +45,15 @@ class PixelPrinter:
             if i % width == 0:
                 print("")
             try:
-                print(self.get_color_escape(color1[0], color1[1], color1[2]) + self.get_color_escape(color2[0], color2[1], color2[2], True) + "▀" + self.RESET, end="")
+                print(color1)
+                print(color2)
+
+                # print(self.get_color_escape(color1[0], color1[1], color1[2]) + self.get_color_escape(color2[0], color2[1], color2[2], True) + "▀" + self.RESET, end="")
             except:
                 print("ERROR DISPLAYING ROW")
 
             i += 1
+        print(self.get_color_escape(color1[0], color1[1], color1[2]) + self.get_color_escape(color2[0], color2[1], color2[2], True) + "▀" + self.RESET, end="")
 
         # for i, color in enumerate(pixel_values):
         #     if i % width == 0:
