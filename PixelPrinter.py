@@ -53,7 +53,7 @@ class PixelPrinter:
                 print("ERROR DISPLAYING ROW")
 
             i += 1
-        print(self.get_color_escape(color1[0], color1[1], color1[2]) + self.get_color_escape(color2[0], color2[1], color2[2], True) + "▀" + self.RESET, end="")
+        print(self.get_color_escape(66, 135, 245) + self.get_color_escape(255, 0, 0, True) + "▀" + self.RESET, end="")
 
         # for i, color in enumerate(pixel_values):
         #     if i % width == 0:
