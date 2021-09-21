@@ -7,8 +7,9 @@ class PixelPrinter:
     def __init__(self):
         self.RESET = '\033[0m'
 
-    def grouped(self, iterable, n):
-        return zip(*[iter(iterable)] * n)
+    def pairwise(self, iterable):
+        a = iter(iterable)
+        return zip(a, a)
 
     def get_color_escape(self, r, g, b, background=False):
         return '\033[{};2;{};{};{}m'.format(48 if background else 38, r, g, b)
@@ -39,7 +40,7 @@ class PixelPrinter:
         width, height = im.size
         pixel_values = list(im.getdata())
 
-        for i, color1, color2 in enumerate(self.grouped(pixel_values, 2)):
+        for i, color1, color2 in enumerate(self.pairwise(pixel_values)):
             if i % width == 0:
                 print("")
             try:
