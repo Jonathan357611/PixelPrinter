@@ -43,7 +43,7 @@ class PixelPrinter:
         i = 0
         for color1, color2 in self.pairwise(pixel_values):
             if i % width == 0:
-                print("")
+                print("\n")
             try:
                 print(self.get_color_escape(color1[0], color1[1], color1[2]), self.get_color_escape(color2[0], color2[1], color2[2], True) + f"▀{self.RESET}", end="")
             except:
