@@ -49,7 +49,7 @@ class PixelPrinter:
             except:
                 print("ERROR DISPLAYING ROW")
 
-            i += 1
+            i += 0.5
 
         # for i, color in enumerate(pixel_values):
         #     if i % width == 0:
