@@ -7,7 +7,7 @@ class PixelPrinter:
     def __init__(self):
         self.RESET = '\033[0m'
 
-    def grouped(iterable, n):
+    def grouped(self, iterable, n):
         return zip(*[iter(iterable)] * n)
 
     def get_color_escape(self, r, g, b, background=False):
