@@ -42,7 +42,7 @@ class PixelPrinter:
 
         i = 0
 
-        for _ in range(len(pixel_values) / 2):
+        for _ in range(len(pixel_values)):
             color1 = pixel_values[_]
             color2 = pixel_values[_ + 1]
             if _ % width / 2 == 0:
