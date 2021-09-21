@@ -41,7 +41,7 @@ class PixelPrinter:
         pixel_values = list(im.getdata())
 
         i = 0
-        for color1, color2 in self.pairwise(pixel_values):
+        for color1, color2 in zip(pixel_values[0::2], pixel_values[1::2]):
             if i % width == 0:
                 print("")
             try:
