@@ -36,8 +36,6 @@ class PixelPrinter:
         width, height = im.size
         pixel_values = list(im.getdata())
 
-
-
         for i, color in enumerate(pixel_values):
             if i % width == 0:
                 print("")
@@ -55,4 +53,5 @@ def process(image, downscale):
     pp = PixelPrinter()
     pp.show(image, int(downscale))
 
-process()
+if __name__ == "__main__":
+    process()
