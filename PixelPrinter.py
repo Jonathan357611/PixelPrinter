@@ -7,6 +7,9 @@ class PixelPrinter:
     def __init__(self):
         self.RESET = '\033[0m'
 
+    def grouped(iterable, n):
+        return zip(*[iter(iterable)] * n)
+
     def get_color_escape(self, r, g, b, background=False):
         return '\033[{};2;{};{};{}m'.format(48 if background else 38, r, g, b)
 
@@ -36,15 +39,21 @@ class PixelPrinter:
         width, height = im.size
         pixel_values = list(im.getdata())
 
-
-
-        for i, color in enumerate(pixel_values):
+        for i, color1, color2 in enumerate(self.grouped(pixel_values, 2)):
             if i % width == 0:
                 print("")
             try:
-                print(self.get_color_escape(color[0], color[1], color[2], True) + f"  {self.RESET}", end="")
+                print(self.get_color_escape(color1[0], color1[1], color1[2]), self.get_color_escape(color2[0], color2[1], color2[2], True) + f"{self.RESET}", end="")
             except:
-                pass
+                print("ERROR DISPLAYING ROW")
+
+        # for i, color in enumerate(pixel_values):
+        #     if i % width == 0:
+        #         print("")
+        #     try:
+        #         print(self.get_color_escape(color[0], color[1], color[2], True) + f"▀{self.RESET}", end="")
+        #     except:
+        #         pass
         print("\n")
 
 
