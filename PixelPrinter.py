@@ -22,10 +22,10 @@ class PixelPrinter:
             int(downscale)
         except:
             print(self.error_msg("--downscale is not int!"))
-            exit(0)
+            return False
         if int(downscale) <= 0:
             print(self.error_msg("--downscale can't be zero or smaller!"))
-            exit(0)
+            return False
 
         ### Load image
         im = Image.open(filename, 'r')
@@ -33,7 +33,7 @@ class PixelPrinter:
         # (further error handling here)
         if int(downscale) > width or int(downscale) > height:
             print(self.error_msg("--downscale can't larger than height/width of image!"))
-            exit(0)
+            return False
 
         im = im.resize((int(width / downscale), int(height / downscale)), Image.LANCZOS)
         width, height = im.size
@@ -47,6 +47,7 @@ class PixelPrinter:
             except:
                 pass
         print("\n")
+        return True
 
 @click.command()
 @click.option("--image", "-i", "image", required=True, help="Path to image to display")
